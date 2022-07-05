@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarModule } from './core/navbar/navbar.module';
+import { CatModule } from './feature/cat.module';
+import { FiltersModule } from './feature/filters.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +14,9 @@ import { NavbarModule } from './core/navbar/navbar.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    NavbarModule
+    NavbarModule,
+    CatModule,
+    FiltersModule
   ],
   providers: [],
   bootstrap: [AppComponent]
