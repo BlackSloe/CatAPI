@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CatService } from 'src/app/services/cat.service';
 
 @Component({
   selector: 'app-filters',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FiltersComponent implements OnInit {
 
-  constructor() { }
+  catCount: number = 10;
+
+  constructor(private _catService: CatService) { }
 
   ngOnInit(): void {
   }
 
+  search(): void {
+    this._catService.getCatImages(this.catCount);
+  }
 }

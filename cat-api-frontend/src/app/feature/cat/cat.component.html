@@ -1,3 +1,6 @@
-<div class="cat">
-    <p>cat</p>
+<div class="cat-container">
+    <div *ngFor="let cat of cats; let index = index">
+        <img src="{{cat.imgSrc}}"/>
+        <p>{{ index }}</p>
+    </div>
 </div>

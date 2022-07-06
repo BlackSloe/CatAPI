@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 
 import { FiltersComponent } from './filters/filters.component';
@@ -9,7 +10,7 @@ const material = [
 
 @NgModule({
     declarations: [FiltersComponent],
-    imports: [material],
+    imports: [FormsModule, material],
     exports: [FiltersComponent]
 })
 export class FiltersModule { }
