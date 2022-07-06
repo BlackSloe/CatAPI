@@ -8,12 +8,18 @@ import { NavbarModule } from './core/navbar/navbar.module';
 import { CatModule } from './feature/cat.module';
 import { FiltersModule } from './feature/filters.module';
 import { CatApiKeyInterceptor } from './helpers/cat-api-key.interceptor';
+import { ContentTypeInterceptor } from './helpers/content-type.interceptor';
 
 
 const interceptors = [
   {
     provide: HTTP_INTERCEPTORS,
     useClass: CatApiKeyInterceptor,
+    multi: true
+  },
+  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: ContentTypeInterceptor,
     multi: true
   }
 ];
@@ -26,7 +32,7 @@ const interceptors = [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    
+
     NavbarModule,
     CatModule,
     FiltersModule

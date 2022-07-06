@@ -2,12 +2,12 @@
     <form>
         <mat-form-field class="filter-item">
             <mat-label>Breed</mat-label>
-            <input matInput type="text" placeholder="Breed" name="cat-breed"/>
+            <input matInput type="text" [formControl]="filter" placeholder="Breed" name="cat-breed"/>
         </mat-form-field>
 
         <mat-form-field class="filter-item">
             <mat-label>Count of cats</mat-label>
-            <input matInput placeholder="Count of cats"  [(ngModel)]="catCount" value="10" name="cat-count"/>
+            <input matInput placeholder="Count of cats" [(ngModel)]="catCount" value="10" name="cat-count"/>
         </mat-form-field>
     </form>
 

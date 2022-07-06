@@ -1,6 +1,9 @@
 <div class="cat-container">
-    <div *ngFor="let cat of cats; let index = index">
-        <img src="{{cat.imgSrc}}"/>
-        <p>{{ index }}</p>
+    <div *ngFor="let cat of cats; let index = index" class="flex-item">
+        <img src="{{ cat.imgSrc }}" class="cat-img"/>
+        <p>Cat index: {{ index }}, cat breed: {{ cat.breed }}</p>
+    </div>
+    <div *ngIf="cats.length === 0">
+        <h1>Empty</h1>
     </div>
 </div>
